@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Lista para los prestamos -->
+    <record id="my_module_view_tree" model="ir.ui.view"> <!-- Registro en BD en la tabla ir.ui.view -->
+        <field name="name">mymodule.prestamo.view.tree</field>
+        <field name="model">mymodule.prestamo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="cliente"/>
+                <field name="total"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Formulario para los prestamos -->
+    <record id="my_module_view_form" model="ir.ui.view">
+        <field name="name">mymodule.prestamo.view.form</field>
+        <field name="model">mymodule.prestamo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="cliente"/>
+                        </group>
+                        <group>
+                            <field name="total"/>
+                            <field name="saldo"/>
+                        </group>
+
+                    </group>
+                    <field name="cobros_ids"> <!-- ??? -->
+                        <tree editable="top">
+                            <field name="fecha"/>
+                            <field name="importe"/>
+                            <field name="prestamo_id"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mymodule_prestamo_action" model="ir.actions.act_window"> <!-- consultar todos-->
+        <field name="name">Prestamos</field>
+        <field name="res_model">mymodule.prestamo</field>
+        <field name="view_mode">tree,form</field>
+        <!--<field name="view_id" ref="bicicletastore_cliente_view_tree"/>-->
+    </record>
+
+    <!--consultar todos-->
+    <menuitem id="prestamo_menu_action"
+              name="Prestamo"
+              action="mymodule_prestamo_action"
+              sequence="10"
+              parent="prestamo_menu"/>
+</odoo>

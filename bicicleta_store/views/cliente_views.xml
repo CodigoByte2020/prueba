@@ -33,16 +33,11 @@
         </field>
     </record>
 
+    <!-- Evento que se dispara al hacer click en el menuitem Cliente -->
     <record id="bicicletastore_cliente_action" model="ir.actions.act_window">
         <field name="name">Clientes</field>
         <field name="res_model">bicicletastore.cliente</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="bicicletastore_cliente_view_tree"/>
     </record>
-    <menuitem id="cliente_menu"
-              name="Cliente"
-              action="bicicletastore_cliente_action"
-              sequence="10"
-              parent="persona_menu"/>
-
 </odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="my_module_menu_root"
+              name="MI MODULO"
+              sequence="60"/>
+        <menuitem id="prestamo_menu"
+                  name="Prestamo"
+                  sequence="20"
+                  parent="my_module_menu_root"/>
+        <menuitem id="registrar_prestamo_menu"
+                  name="Registrar prestamo"
+                  sequence="30"
+                  parent="my_module_menu_root"/>
+</odoo>

@@ -13,8 +13,8 @@
         # Archivo de reglas de acceso
         'security/ir.model.access.csv',
         # Vistas
-        'views/bicicleta_store_menus.xml',
         'views/cliente_views.xml',
+        'views/bicicleta_store_menus.xml',
         'views/comprobante_pago_views.xml',
     ],
     'installable': True,

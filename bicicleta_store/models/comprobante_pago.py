@@ -103,6 +103,7 @@ class ComprobantePagoCliente(models.Model):
             }
         }
 
+    # No altera el campo
     @api.onchange('termino_pago_id')
     def _onchange_termino_pago_id(self):
         if self.fecha_emision and self.termino_pago_id:
@@ -113,6 +114,7 @@ class ComprobantePagoCliente(models.Model):
                 'value': {'fecha_vencimiento': fecha_cal}
             }
 
+    # Altera el campo
     @api.depends('fecha_vencimiento')
     def _compute_state_pago(self):
         today = fields.Date.context_today(self)
@@ -125,7 +127,7 @@ class ComprobantePagoCliente(models.Model):
                 self.state_pago = 'overdue'
 
     def action_set_confirm(self):
-        self.ensure_one()
+        self.ensure_one()  # Se asegura que solo llegue un objeto
         self.state = 'confirm'
 
     def action_set_payment(self):
@@ -163,6 +165,7 @@ class ComprobantePagoClienteProducto(models.Model):
     qty = fields.Float(string='Cantidad', required=True)
     total = fields.Float(string='Total', required=True)
 
+    #
     @api.onchange('bicicleta_id')
     def _onchange_bicicleta_id(self):
         return {'value': {'precio': self.bicicleta_id.precio}}

@@ -61,9 +61,8 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Pagos">
-                            <field name="pago_ids" readonly="1"
-                                   attrs="{'readonly': [('state', '=', 'budget')]}">
+                        <page string="Pagos"> #
+                            <field name="pago_ids" readonly="1">
                                 <tree>
                                     <field name="comprobante_id" invisible="1"/>
                                     <field name="fecha_pago"/>
@@ -73,6 +72,7 @@
                             </field>
                         </page>
                     </notebook>
+                    <!-- ???????????????? -->
                     <div class="text-right">
                         <label for="total" string="Total:"/>
                         <field name="total" readonly="1" force_save="1"/>
