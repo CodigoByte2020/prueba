@@ -61,14 +61,14 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Pagos"> #
+                        <page string="Pagos">
                             <field name="pago_ids" readonly="1">
                                 <tree>
                                     <field name="comprobante_id" invisible="1"/>
                                     <field name="fecha_pago"/>
-                                    <field name="monto"/>
-                                    <field name="user_id"/>
                                 </tree>
+                                    <field name="user_id"/>
+                                    <field name="monto"/>
                             </field>
                         </page>
                     </notebook>

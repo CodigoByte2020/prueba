@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="modulocompras_pedidohistorico_view_form_wizard" model="ir.ui.view">
+        <field name="name">modulocompras.pedidohistorico.view.form.wizard</field>
+        <field name="model">modulocompras.pedidohistorico</field>
+        <field name="arch" type="xml"/>
+
+    </record>
+</odoo>

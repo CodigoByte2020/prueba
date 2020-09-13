@@ -15,6 +15,26 @@
                 <attribute name="string">Abastecedor</attribute>
                 <attribute name="placeholder">Ingresa tu nombre completo</attribute>
             </xpath>
+            <xpath expr="//button[@name='button_cancel']" position="before">
+                <attribute name="string">Abrir lista pedidos</attribute>
+            </xpath>
+            <xpath expr="//page[@name='purchase_delivery_invoice'" position="before">
+                <attribute name="string">Informacion de pedidos</attribute>
+            </xpath>
         </field>
+    </record>
+
+    <record>
+        <notebook>
+            <page string="Informacion de pedidos">
+                <field name="pedidohistorico_ids" readonly="1">
+                    <tree>
+                        <field name="nombre_pedido"/>
+                        <field name="tipo_pedido"/>
+                        <field name="modo_pedido"/>
+                    </tree>
+                </field>
+            </page>
+        </notebook>
     </record>
 </odoo>
