@@ -16,7 +16,8 @@
                 <attribute name="placeholder">Ingresa tu nombre completo</attribute>
             </xpath>
             <xpath expr="//button[@name='button_cancel']" position="before">
-                <attribute name="string">Abrir lista pedidos</attribute>
+                <!-- <attribute name="string">Abrir lista pedidos</attribute> Error, mi lógica -->
+                <button name="action_set_pedidoshistoricos" type="object" string="Infracciones" class="btn btn-primary"/>
             </xpath>
             <xpath expr="//page[@name='purchase_delivery_invoice'" position="before">
                 <attribute name="string">Informacion de pedidos</attribute>
@@ -28,7 +29,6 @@
         <field name="res_model">modulocompras.pedidohistorico</field>
         <field name="view_mode">form</field>
     </record>
-
     <record>
         <notebook>
             <page string="Informacion de pedidos">
