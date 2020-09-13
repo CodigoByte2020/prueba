@@ -23,6 +23,11 @@
             </xpath>
         </field>
     </record>
+    <record id="modulocompras_pedidohistorico_action" model="ir.actions.act_window">
+        <field name="name">Pedidos Historicos</field>
+        <field name="res_model">modulocompras.pedidohistorico</field>
+        <field name="view_mode">form</field>
+    </record>
 
     <record>
         <notebook>
