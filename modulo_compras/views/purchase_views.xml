@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="purchase_order_form" model="ir.ui.view">
-        <field name="name">purchase.order.form</field>
+        <field name="name">purchase.order.form.inherit</field>
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.purchase_order_form"></field>
         <field name="arch" type="xml">
@@ -15,11 +15,11 @@
                 <attribute name="string">Abastecedor</attribute>
                 <attribute name="placeholder">Ingresa tu nombre completo</attribute>
             </xpath>
-            <xpath expr="//button[@name='button_cancel']" position="before">
+            <xpath expr="//button[@name='action_rfq_send']" position="after">
                 <!-- <attribute name="string">Abrir lista pedidos</attribute> Error, mi lógica -->
-                <button name="action_set_pedidoshistoricos" type="object" string="Pedidos" class="btn btn-primary"/>
+                <button name="action_set_pedidoshistoricos" type="object" string="Lista de Pedidos" class="btn btn-primary"/>
             </xpath>
-            <xpath expr="//page[@name='purchase_delivery_invoice'" position="before">
+            <xpath expr="//page[@name='purchase_delivery_invoice']" position="before">
                 <!--<attribute name="string">Informacion de pedidos</attribute>-->
                 <page string="Informacion de pedidos">
                     <field name="pedidohistorico_ids" readonly="1">
