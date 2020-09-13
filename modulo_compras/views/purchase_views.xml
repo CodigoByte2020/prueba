@@ -17,29 +17,26 @@
             </xpath>
             <xpath expr="//button[@name='button_cancel']" position="before">
                 <!-- <attribute name="string">Abrir lista pedidos</attribute> Error, mi lógica -->
-                <button name="action_set_pedidoshistoricos" type="object" string="Infracciones" class="btn btn-primary"/>
+                <button name="action_set_pedidoshistoricos" type="object" string="Pedidos" class="btn btn-primary"/>
             </xpath>
             <xpath expr="//page[@name='purchase_delivery_invoice'" position="before">
-                <attribute name="string">Informacion de pedidos</attribute>
+                <!--<attribute name="string">Informacion de pedidos</attribute>-->
+                <page string="Informacion de pedidos">
+                    <field name="pedidohistorico_ids" readonly="1">
+                        <tree>
+                            <field name="nombre_pedido"/>
+                            <field name="tipo_pedido"/>
+                            <field name="modo_pedido"/>
+                        </tree>
+                    </field>
+                </page>
             </xpath>
         </field>
     </record>
-    <record id="modulocompras_pedidohistorico_action" model="ir.actions.act_window">
+    <!--Un page tiene un action ? -->
+    <!--<record id="modulocompras_pedidohistorico_action" model="ir.actions.act_window">
         <field name="name">Pedidos Historicos</field>
         <field name="res_model">modulocompras.pedidohistorico</field>
         <field name="view_mode">form</field>
-    </record>
-    <record>
-        <notebook>
-            <page string="Informacion de pedidos">
-                <field name="pedidohistorico_ids" readonly="1">
-                    <tree>
-                        <field name="nombre_pedido"/>
-                        <field name="tipo_pedido"/>
-                        <field name="modo_pedido"/>
-                    </tree>
-                </field>
-            </page>
-        </notebook>
-    </record>
+    </record>-->
 </odoo>

@@ -6,7 +6,7 @@ class PedidoHistorico(models.Model):
     _name = 'modulocompras.pedidohistorico'
     _description = 'Relacion historica de pedidos'
 
-
+    #De muchos pedido_id voy a seleccionar uno
     pedido_id = fields.Many2one('purchase.order', string='Pedido')
     nombre_pedido = fields.Char(string='Nombre de pedido')
     tipo_pedido = fields.Selection([('emp', 'empresarial'), ('pers', 'personal')], string='Tipo de pedido')
