@@ -7,7 +7,9 @@ class Prestamo(models.Model):
 
     cliente = fields.Char(string='Nombre del cliente')
     total = fields.Char(string='Monto prestado')
-    cobros_ids = fields.One2many('cobro', 'prestamo_id')  # ???
+    cliente_id = fields.Many2one('mymodule.cliente', String='Cliente', required=True)
+
+    #cobros_ids = fields.One2many('cobro', 'prestamo_id') ???
     saldo = fields.Float(string="Saldo")
     # estado = fields.Selection([('owe', 'deber'), ('paid', 'pagar')], string='estado')
 
