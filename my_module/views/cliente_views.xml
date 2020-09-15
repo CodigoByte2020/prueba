@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-<record id="mymodule_cliente_action" model="ir_actions_act.window">
-    <field name="name">Cobros</field>
-    <field name="res_model">mymodule.cliente</field>
-    <field name="view_mode">tree,form</field>
-</record>
-<menuitem id="cliente_menu"
-          name="Cliente"
-          action="mymodule_cliente_action"
-          sequence="30"
-          parent="mymodule_menu_root"/>
+    <record id="mymodule_cliente_view_tree" model="ir.ui.view">
+        <field name="name">mymodule.cliente.view.tree</field>
+        <field name="model">mymodule.cliente</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="apellido"/>
+                <field name="telefono"/>
+                <field name="direccion"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mymodule_cliente_view_form" model="ir.ui.view">
+        <field name="name">mymodule.cliente.view.form</field>
+        <field name="model">mymodule.cliente</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="apellido"/>
+                        </group>
+                        <group>
+                            <field name="telefono"/>
+                            <field name="direccion"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Este action como sabe que vista es un tree y un form -->
+    <record id="mymodule_cliente_action" model="ir.actions.act_window">
+        <field name="name">Clientes</field>
+        <field name="res_model">mymodule.cliente</field>
+        <field name="view_mode">tree,form</field>
+        <!--<field name="view_id" ref="mymodule_cliente_view_tree"/>-->
+    </record>
+
+    <menuitem id="cliente_menu"
+              name="Cliente"
+              action="mymodule_cliente_action"
+              sequence="20"
+              parent="mymodule_menu_root"/>
 </odoo>

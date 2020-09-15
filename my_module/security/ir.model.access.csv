@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mymodule_cobro,access_mymodule_cobro,model_mymodule_cobro,base.group_user,1,1,1,1
+access_mymodule_cliente,access_mymodule_cliente,model_mymodule_cliente,base.group_user,1,1,1,1
 access_mymodule_prestamo,access_mymodule_prestamo,model_mymodule_prestamo,base.group_user,1,1,1,1
