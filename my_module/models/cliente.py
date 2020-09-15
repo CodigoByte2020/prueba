@@ -6,6 +6,6 @@ class Cliente(models.Model):
     _description = "Tabla para los clientes"
 
     name = fields.Char(string='Nombre', required=True)
-    apellidos = fields.Char(string='Apellidos', required=True)
+    apellido = fields.Char(string='Apellidos', required=True)
     celular = fields.Char(string='Celular')
     direccion = fields.Char(string='Direccion')

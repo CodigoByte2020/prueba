@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="mymodule_cliente_action" model="ir_actions_act.window">
+    <field name="name">Cobros</field>
+    <field name="res_model">mymodule.cliente</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<menuitem id="cliente_menu"
+          name="Cliente"
+          action="mymodule_cliente_action"
+          sequence="30"
+          parent="mymodule_menu_root"/>
+</odoo>

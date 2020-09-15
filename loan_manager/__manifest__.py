@@ -18,7 +18,7 @@
         # Vistas
         'views/loan_manager_menus.xml',
         'views/cliente_views.xml',
-        #'views/cobro_views.xml',
+        #'views/cliente_views.xml',
         'views/prestamo_views.xml',
     ],
     'installable': True,

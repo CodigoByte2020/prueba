@@ -7,52 +7,62 @@
         <field name="model">mymodule.prestamo</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="cliente"/>
+                <field name="cliente_id"/>
                 <field name="total"/>
             </tree>
         </field>
     </record>
 
     <!-- Formulario para los prestamos -->
-    <record id="my_module_view_form" model="ir.ui.view">
+    <record id="mymodule_prestamo_view_form" model="ir.ui.view">
         <field name="name">mymodule.prestamo.view.form</field>
         <field name="model">mymodule.prestamo</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_set_cobro" type="object" string="Realizar Cobro" class="btn btn-primary"
+                            attrs="{'invisible': [('estado', '!=', 'owe')]}"/>
+                    <field name="estado" widget="statusbar" statusbar_visible="owe,paid"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
-                            <field name="cliente"/>
+                            <field name="cliente_id"
+                                   options="{'no_open': True}"
+                                   attrs="{'readonly': [('estado', '!=', 'draft')]}"/>
                         </group>
                         <group>
-                            <field name="total"/>
-                            <field name="saldo"/>
+                            <field name="total" attrs="{'readonly': [('estado', '!=', 'draft')]}"/>
+                            <field name="saldo" force_save="1"/>
+                            <field></field>
                         </group>
-
                     </group>
-                    <field name="cobros_ids"> <!-- ??? -->
-                        <tree editable="top">
-                            <field name="fecha"/>
-                            <field name="importe"/>
-                            <field name="prestamo_id"/>
-                        </tree>
-                    </field>
+                    <notebook>
+                        <page>
+                            <field name="cobros_ids" readonly="1">
+                                <tree editable="top">
+                                    <field name="fecha"/>
+                                    <field name="importe"/>
+                                    <field name="prestamo_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="mymodule_prestamo_action" model="ir.actions.act_window"> <!-- consultar todos-->
+    <record id="mymodule_prestamo_action" model="ir.actions.act_window">
         <field name="name">Prestamos</field>
         <field name="res_model">mymodule.prestamo</field>
         <field name="view_mode">tree,form</field>
         <!--<field name="view_id" ref="bicicletastore_cliente_view_tree"/>-->
     </record>
 
-    <!--consultar todos-->
-    <menuitem id="prestamo_menu_action"
+    <menuitem id="prestamo_menu"
               name="Prestamo"
               action="mymodule_prestamo_action"
-              sequence="10"
-              parent="prestamo_menu"/>
+              sequence="50"
+              parent="mymodule_menu_root"/>
 </odoo>
