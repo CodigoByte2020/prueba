@@ -7,6 +7,7 @@ STATE_SELECTION = [
     ('paid', 'pagado')
 ]
 
+
 class Prestamo(models.Model):
     _name = 'mymodule.prestamo'
     description = "Tabla de prestamos"
