@@ -12,9 +12,8 @@
         'data/ir_sequence_data.xml',
 
         # Archivo de reglas de acceso
-        #'security/ir.model.access.csv',
         'security/ir.model.access.csv',
-
+        'security/registros_groups.xml',
         # Vistas
         'views/loan_manager_menus.xml',
         'views/cliente_views.xml',

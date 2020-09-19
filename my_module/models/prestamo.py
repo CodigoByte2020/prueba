@@ -27,7 +27,7 @@ class Prestamo(models.Model):
             'name': 'Registro de un cobro',
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
-            'res_model': 'mymodule.cliente',
+            'res_model': 'mymodule.cobro',
             'view_id': view_id,
             'views': [(view_id, 'form')],
             'target': 'new',
