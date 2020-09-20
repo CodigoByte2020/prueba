@@ -1,4 +1,7 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+id,name,model_id:id,group_id:id,perm_create,perm_read,perm_write,perm_unlink
 access_loanmanager_cliente,access_loanmanager_cliente,model_loanmanager_cliente,base.group_user,1,1,1,1
 access_loanmanager_cobros,access_loanmanager_cobros,model_loanmanager_cobros,base.group_user,1,1,1,1
 access_loanmanager_prestamo,access_loanmanager_prestamo,model_loanmanager_prestamo,base.group_user,1,1,1,1
+
+access_loanmanager_registro_type_super,Tipo Registro Super,model_loanmanager_registro_type,loanmanager_group_jefe,1,1,1,1
+access_loanmanager_registro_super,Registro Super,model_loanmanager_registro,loanmanager_group_usuario,0,1,0,0

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sede_view_tree" model="ir.ui.view">
+        <field name="name">sede.view.tree</field>
+        <field name="model">loanmanager.sede</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="user_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sede_view_form" model="ir.ui.view">
+        <field name="name">sede.view.form</field>
+        <field name="model">loanmanager.sede</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="user_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sede_action" model="ir.actions.act_window">
+        <field name="name">Sedes</field>
+        <field name="res_model">loanmanager.sede</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="sede_view_tree"/>
+    </record>
+
+    <menuitem id="sede_menu_action" action="sede_action" parent="file_cliente_menu" sequence="20"/>
+</odoo>

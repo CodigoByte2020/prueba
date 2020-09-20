@@ -17,6 +17,7 @@ class Prestamo(models.Model):
     monto_prestado = fields.Float(string='Monto Prestado', required=True)
     fecha = fields.Date(string='Fecha', default=fields.Date.context_today, readonly=True)
     cliente_id = fields.Many2one('loanmanager.cliente', string='Cliente', required=True)
+    sede_id = fields.Many2one('loanmanager.sede', string='Sede', required=True)
     cobro_ids = fields.One2many('loanmanager.cobros', 'prestamo_id', string='Cobros')
     saldo = fields.Float(string="Saldo", readonly=True)
     estado = fields.Selection(STATE_SELECTION, string='Estado', default='draft')
